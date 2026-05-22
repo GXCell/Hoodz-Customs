@@ -1,0 +1,22 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#101112"/>
+  <circle cx="1000" cy="130" r="220" fill="#FF8A2B" fill-opacity="0.2"/>
+  <circle cx="180" cy="760" r="240" fill="#FF4D2B" fill-opacity="0.14"/>
+  <rect y="612" width="1200" height="288" fill="#191C21"/>
+  <ellipse cx="380" cy="666" rx="112" ry="30" fill="#000000" fill-opacity="0.36"/>
+  <ellipse cx="824" cy="666" rx="112" ry="30" fill="#000000" fill-opacity="0.36"/>
+  <path d="M158 552C202 484 262 442 370 426H592C660 428 714 450 752 492L842 492C926 494 996 530 1046 574L1022 604H178L158 552Z" fill="#23272D"/>
+  <path d="M274 474C306 440 358 422 430 422H568C632 422 682 446 720 492H246L274 474Z" fill="#FF7B24"/>
+  <path d="M248 518H762C818 518 894 536 964 578H210L248 518Z" fill="#3B4049"/>
+  <path d="M352 434H584L648 492H318L352 434Z" fill="#171A1F"/>
+  <path d="M390 434H566L612 486H360L390 434Z" fill="#FFD5AA" fill-opacity="0.28"/>
+  <circle cx="378" cy="620" r="76" fill="#1B2028"/>
+  <circle cx="378" cy="620" r="40" fill="#A3ABB7"/>
+  <circle cx="826" cy="620" r="76" fill="#1B2028"/>
+  <circle cx="826" cy="620" r="40" fill="#A3ABB7"/>
+  <rect x="870" y="536" width="82" height="18" rx="9" fill="#FFA047"/>
+  <rect x="240" y="534" width="72" height="16" rx="8" fill="#FFA047"/>
+  <path d="M214 602H998L948 632H270L214 602Z" fill="#FF5B2E"/>
+  <text x="84" y="118" fill="#F5F7FB" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">MOPAR CUSTOM TRUCK</text>
+  <text x="84" y="172" fill="#B8C2D8" font-family="Arial, Helvetica, sans-serif" font-size="24">garage-built utility with muscle cues</text>
+</svg>

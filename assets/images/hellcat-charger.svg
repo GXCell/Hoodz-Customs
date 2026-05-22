@@ -1,0 +1,25 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#0B0E14"/>
+  <circle cx="980" cy="120" r="220" fill="#FF5B2E" fill-opacity="0.22"/>
+  <circle cx="140" cy="820" r="260" fill="#C31B2B" fill-opacity="0.2"/>
+  <rect y="600" width="1200" height="300" fill="#131A27"/>
+  <ellipse cx="380" cy="650" rx="120" ry="34" fill="#000000" fill-opacity="0.4"/>
+  <ellipse cx="840" cy="650" rx="120" ry="34" fill="#000000" fill-opacity="0.4"/>
+  <path d="M180 540C210 450 300 390 430 384H790C908 390 988 430 1034 514L1048 548L1010 588H192L180 540Z" fill="#101318"/>
+  <path d="M248 516C292 442 360 414 470 408H756C854 412 932 446 982 516H248Z" fill="#212734"/>
+  <path d="M246 520H986L1018 568H212L246 520Z" fill="#06080C"/>
+  <path d="M306 438H480C520 438 560 458 586 492H274C284 462 292 450 306 438Z" fill="#0A0D12"/>
+  <path d="M606 438H782C842 438 896 458 936 492H590L606 438Z" fill="#0A0D12"/>
+  <rect x="272" y="500" width="92" height="18" rx="9" fill="#FF3C1F"/>
+  <rect x="866" y="500" width="92" height="18" rx="9" fill="#FF3C1F"/>
+  <path d="M228 588H1002L964 620H264L228 588Z" fill="#FF5B2E"/>
+  <circle cx="362" cy="618" r="78" fill="#161C29"/>
+  <circle cx="362" cy="618" r="42" fill="#7B879E"/>
+  <circle cx="846" cy="618" r="78" fill="#161C29"/>
+  <circle cx="846" cy="618" r="42" fill="#7B879E"/>
+  <path d="M442 384H764L808 490H398L442 384Z" fill="#1C2230"/>
+  <path d="M474 408H730L750 486H454L474 408Z" fill="#89A2C7" fill-opacity="0.25"/>
+  <path d="M540 348H668V384H540V348Z" fill="#FF5B2E"/>
+  <text x="92" y="118" fill="#F5F7FB" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">HELLCAT CHARGER</text>
+  <text x="92" y="172" fill="#B8C2D8" font-family="Arial, Helvetica, sans-serif" font-size="24">widebody street build</text>
+</svg>

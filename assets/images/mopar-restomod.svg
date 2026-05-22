@@ -1,0 +1,22 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#081018"/>
+  <circle cx="980" cy="140" r="220" fill="#2BA9FF" fill-opacity="0.18"/>
+  <circle cx="180" cy="720" r="240" fill="#1D5CFF" fill-opacity="0.15"/>
+  <rect y="610" width="1200" height="290" fill="#0F1822"/>
+  <ellipse cx="366" cy="664" rx="112" ry="30" fill="#000000" fill-opacity="0.35"/>
+  <ellipse cx="834" cy="664" rx="112" ry="30" fill="#000000" fill-opacity="0.35"/>
+  <path d="M162 554C214 474 308 416 452 404H772C888 412 980 462 1044 554L1020 592H180L162 554Z" fill="#13222F"/>
+  <path d="M290 470C340 430 386 408 470 404H690C774 408 840 430 910 480H290V470Z" fill="#4B89D9"/>
+  <path d="M250 514H980L1008 580H218L250 514Z" fill="#264E7C"/>
+  <path d="M350 432H640L706 500H310L350 432Z" fill="#131A25"/>
+  <path d="M474 432H644L686 492H450L474 432Z" fill="#A9C8EB" fill-opacity="0.3"/>
+  <circle cx="364" cy="620" r="76" fill="#161D2A"/>
+  <circle cx="364" cy="620" r="38" fill="#B6C6D8"/>
+  <circle cx="842" cy="620" r="76" fill="#161D2A"/>
+  <circle cx="842" cy="620" r="38" fill="#B6C6D8"/>
+  <rect x="228" y="530" width="74" height="16" rx="8" fill="#85D5FF"/>
+  <rect x="916" y="530" width="74" height="16" rx="8" fill="#85D5FF"/>
+  <path d="M260 592H992L950 622H304L260 592Z" fill="#0D1117"/>
+  <text x="84" y="118" fill="#F5F7FB" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">MOPAR RESTOMOD</text>
+  <text x="84" y="172" fill="#B8C2D8" font-family="Arial, Helvetica, sans-serif" font-size="24">classic coupe, modern stance</text>
+</svg>

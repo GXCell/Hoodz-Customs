@@ -1,0 +1,22 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#100916"/>
+  <circle cx="1000" cy="132" r="220" fill="#B75BFF" fill-opacity="0.18"/>
+  <circle cx="150" cy="740" r="250" fill="#6E2DFF" fill-opacity="0.18"/>
+  <rect y="616" width="1200" height="284" fill="#161024"/>
+  <ellipse cx="392" cy="668" rx="116" ry="32" fill="#000000" fill-opacity="0.38"/>
+  <ellipse cx="840" cy="668" rx="116" ry="32" fill="#000000" fill-opacity="0.38"/>
+  <path d="M188 554C230 470 332 406 486 396H756C884 402 972 448 1018 532L1032 562L1000 598H204L188 554Z" fill="#1C1227"/>
+  <path d="M286 494C338 438 420 406 518 402H734C822 410 892 442 950 494H286Z" fill="#6F2B9C"/>
+  <path d="M240 522H986L1012 574H214L240 522Z" fill="#34114D"/>
+  <path d="M384 430H684L726 492H350L384 430Z" fill="#1A1226"/>
+  <path d="M430 430H662L694 486H406L430 430Z" fill="#E0C8FF" fill-opacity="0.28"/>
+  <circle cx="384" cy="622" r="78" fill="#171925"/>
+  <circle cx="384" cy="622" r="40" fill="#A8A3B9"/>
+  <circle cx="838" cy="622" r="78" fill="#171925"/>
+  <circle cx="838" cy="622" r="40" fill="#A8A3B9"/>
+  <rect x="252" y="534" width="86" height="16" rx="8" fill="#DDA6FF"/>
+  <rect x="884" y="534" width="86" height="16" rx="8" fill="#DDA6FF"/>
+  <path d="M226 598H994L956 626H266L226 598Z" fill="#F15AFF"/>
+  <text x="92" y="118" fill="#F5F7FB" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">CUSTOM CHALLENGER</text>
+  <text x="92" y="172" fill="#B8C2D8" font-family="Arial, Helvetica, sans-serif" font-size="24">plum crazy inspired show car</text>
+</svg>
