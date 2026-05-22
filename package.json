@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "python3 -m http.server 8000",
-    "test": "node --check app.js"
+    "test": "node --test && node --check app.js && node --check invoice-utils.js"
   },
   "repository": {
     "type": "git",
@@ -14,7 +14,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/GXCell/Hoodz-Customs/issues"
   },

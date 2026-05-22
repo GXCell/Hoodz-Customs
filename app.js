@@ -9,6 +9,8 @@ const totalDisplay = document.querySelector('#total-display');
 const previewEmpty = document.querySelector('#preview-empty');
 const previewContent = document.querySelector('#preview-content');
 
+const { parseAmount, calculateTotals } = window.InvoiceUtils;
+
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
@@ -30,11 +32,6 @@ const previewFields = {
   subtotal: document.querySelector('#preview-subtotal'),
   tax: document.querySelector('#preview-tax'),
   total: document.querySelector('#preview-total'),
-};
-
-const parseAmount = (value) => {
-  const parsed = Number.parseFloat(value);
-  return Number.isFinite(parsed) && parsed >= 0 ? parsed : 0;
 };
 
 const formatCurrency = (value) => formatter.format(value || 0);
@@ -85,10 +82,7 @@ const summarizeRow = (row) => {
 
 const updateTotals = () => {
   const items = getLineItemRows().map(summarizeRow);
-  const subtotal = items.reduce((sum, item) => sum + item.amount, 0);
-  const taxRate = parseAmount(document.querySelector('#tax-rate').value) / 100;
-  const tax = subtotal * taxRate;
-  const total = subtotal + tax;
+  const { subtotal, tax, total } = calculateTotals(items, document.querySelector('#tax-rate').value);
 
   subtotalDisplay.textContent = formatCurrency(subtotal);
   taxDisplay.textContent = formatCurrency(tax);
@@ -155,16 +149,7 @@ lineItems.addEventListener('click', (event) => {
     return;
   }
 
-  const rows = getLineItemRows();
-  if (rows.length === 1) {
-    rows[0].querySelector('.item-description').value = '';
-    rows[0].querySelector('.item-quantity').value = 1;
-    rows[0].querySelector('.item-price').value = 0;
-    rows[0].querySelector('.item-type').value = 'Labor';
-  } else {
-    event.target.closest('.line-item').remove();
-  }
-
+  event.target.closest('.line-item').remove();
   updateTotals();
 });
 
