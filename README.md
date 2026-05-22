@@ -10,7 +10,7 @@ ARI is a lightweight automotive repair invoice app for generating repair invoice
 
 ## Run locally
 
-1. Open a terminal in `/home/runner/work/Hoodz-Customs/Hoodz-Customs`
+1. Open a terminal in the project root
 2. Start a local server:
 
    ```bash

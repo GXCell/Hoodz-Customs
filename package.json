@@ -1,7 +1,7 @@
 {
   "name": "hoodz-customs",
   "version": "1.0.0",
-  "description": "webpage mechanic",
+  "description": "A lightweight automotive repair invoice app for generating repair invoices in the browser",
   "main": "app.js",
   "scripts": {
     "start": "python3 -m http.server 8000",

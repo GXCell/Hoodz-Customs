@@ -39,6 +39,12 @@ const parseAmount = (value) => {
 
 const formatCurrency = (value) => formatter.format(value || 0);
 
+const appendPreviewCell = (row, value) => {
+  const cell = document.createElement('td');
+  cell.textContent = String(value);
+  row.appendChild(cell);
+};
+
 const createInvoiceNumber = () => {
   const stamp = new Date().toISOString().replace(/[-:TZ.]/g, '').slice(0, 14);
   return `ARI-${stamp}`;
@@ -117,13 +123,11 @@ const renderPreview = () => {
     .filter((item) => item.description)
     .forEach((item) => {
       const row = document.createElement('tr');
-      [item.type, item.description, item.quantity, formatCurrency(item.price), formatCurrency(item.amount)].forEach(
-        (value) => {
-          const cell = document.createElement('td');
-          cell.textContent = String(value);
-          row.appendChild(cell);
-        }
-      );
+      appendPreviewCell(row, item.type);
+      appendPreviewCell(row, item.description);
+      appendPreviewCell(row, item.quantity);
+      appendPreviewCell(row, formatCurrency(item.price));
+      appendPreviewCell(row, formatCurrency(item.amount));
       previewFields.lineItems.appendChild(row);
     });
 
