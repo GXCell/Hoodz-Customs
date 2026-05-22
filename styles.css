@@ -199,6 +199,10 @@ h1 {
   background: var(--panel-strong);
 }
 
+.hero-media {
+  margin: 0;
+}
+
 .section {
   padding: clamp(1.75rem, 4vw, 3rem);
   margin-bottom: 1.5rem;
