@@ -121,8 +121,9 @@ const diagnosticForm = document.getElementById("diagnostic-form");
 const bookingForm = document.getElementById("booking-form");
 const appointmentSlot = document.getElementById("appointment-slot");
 const bookingSubmit = document.getElementById("booking-submit");
+const slotStatus = document.getElementById("slot-status");
 
-let latestSummary = "";
+let mechanicNotes = "";
 
 diagnosticForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -139,10 +140,10 @@ diagnosticForm.addEventListener("submit", (event) => {
   document.getElementById("price-range").textContent = result.price;
   document.getElementById("timeline").textContent = result.timeline;
   document.getElementById("assistant-message").textContent =
-    `Based on your ${system} ${symptom.replace("-", " ")} report, I would start with: ${result.diagnosis}.`;
+    `Based on your ${system} ${symptom.replace(/-/g, " ")} report, I would start with: ${result.diagnosis}.`;
 
-  latestSummary = `${result.note} ${urgencyNote}${details ? ` Driver notes: ${details}` : ""}`;
-  document.getElementById("mechanic-note").textContent = latestSummary;
+  mechanicNotes = `${result.note} ${urgencyNote}${details ? ` Driver notes: ${details}` : ""}`;
+  document.getElementById("mechanic-note").textContent = mechanicNotes;
 
   appointmentSlot.innerHTML = "";
   appointmentOptions[urgency].forEach((slot) => {
@@ -151,6 +152,7 @@ diagnosticForm.addEventListener("submit", (event) => {
     option.textContent = slot;
     appointmentSlot.appendChild(option);
   });
+  slotStatus.textContent = `Updated appointment choices for ${urgency} urgency. First available slot: ${appointmentOptions[urgency][0]}.`;
 
   document.getElementById("confirmation-text").textContent =
     "Diagnosis complete. Choose a slot below to send this summary to your mechanic.";
@@ -166,7 +168,7 @@ bookingForm.addEventListener("submit", (event) => {
   const diagnosis = document.getElementById("diagnosis").textContent;
   const price = document.getElementById("price-range").textContent;
 
-  const readySummary = latestSummary || "General diagnostic appointment requested.";
+  const readySummary = mechanicNotes || "General diagnostic appointment requested.";
 
   document.getElementById("confirmation-text").textContent =
     `${name}, your ${slot} appointment is reserved. The shop will contact you at ${contact} with a ${diagnosis.toLowerCase()} estimate of ${price}. Notes sent: ${readySummary}`;

@@ -24,7 +24,7 @@
       <div class="hero-panel">
         <div class="assistant-card">
           <span class="assistant-status">Live AI session</span>
-          <h2>Nova scans symptoms like a service advisor.</h2>
+          <h2>The AI assistant scans symptoms like a service advisor.</h2>
           <ul>
             <li>Understands everyday car language</li>
             <li>Translates symptoms into likely repair paths</li>
@@ -144,8 +144,10 @@
             <option value="Friday · 11:00 AM">Friday · 11:00 AM</option>
           </select>
         </label>
-        <button id="booking-submit" type="submit" class="button primary full-width" disabled>Confirm appointment</button>
+        <button id="booking-submit" type="submit" class="button primary full-width" disabled aria-describedby="booking-help">Confirm appointment</button>
       </form>
+      <p id="booking-help" class="assistive-text">Complete the AI diagnosis first to unlock appointment booking.</p>
+      <p id="slot-status" class="assistive-text" aria-live="polite"></p>
 
       <div class="confirmation-card" id="confirmation-card">
         <h3>Booking status</h3>
