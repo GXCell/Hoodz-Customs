@@ -12,6 +12,8 @@
     return Number.isFinite(parsed) && parsed >= 0 ? parsed : 0;
   };
 
+  const roundCurrency = (value) => Math.round((value + Number.EPSILON) * 100) / 100;
+
   const calculateTotals = (items, taxRate) => {
     const normalizedItems = items.map((item) => {
       const quantity = parseAmount(item.quantity);
@@ -21,19 +23,19 @@
         ...item,
         quantity,
         price,
-        amount: quantity * price,
+        amount: roundCurrency(quantity * price),
       };
     });
 
-    const subtotal = normalizedItems.reduce((sum, item) => sum + item.amount, 0);
+    const subtotal = roundCurrency(normalizedItems.reduce((sum, item) => sum + item.amount, 0));
     const normalizedTaxRate = parseAmount(taxRate) / 100;
-    const tax = subtotal * normalizedTaxRate;
+    const tax = roundCurrency(subtotal * normalizedTaxRate);
 
     return {
       items: normalizedItems,
       subtotal,
       tax,
-      total: subtotal + tax,
+      total: roundCurrency(subtotal + tax),
     };
   };
 
