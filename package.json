@@ -1,0 +1,22 @@
+{
+  "name": "hoodz-customs",
+  "version": "1.0.0",
+  "description": "webpage mechanic",
+  "main": "app.js",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "node --check app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GXCell/Hoodz-Customs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GXCell/Hoodz-Customs/issues"
+  },
+  "homepage": "https://github.com/GXCell/Hoodz-Customs#readme"
+}

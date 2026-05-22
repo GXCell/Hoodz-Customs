@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARI | Automotive Repair Invoice</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">ARI</p>
+          <h1>Automotive Repair Invoice</h1>
+          <p class="intro">
+            Create professional repair invoices directly in the browser for your
+            shop, customer, vehicle, and service details.
+          </p>
+        </div>
+        <button id="print-invoice" class="secondary-action" type="button" disabled>
+          Print invoice
+        </button>
+      </section>
+
+      <section class="workspace">
+        <form id="invoice-form" class="panel invoice-form">
+          <div class="panel-heading">
+            <h2>Invoice builder</h2>
+            <p>Fill in the repair order details and generate an invoice preview.</p>
+          </div>
+
+          <div class="grid two-column">
+            <label>
+              Shop name
+              <input id="shop-name" name="shopName" type="text" value="ARI Auto Repair" required />
+            </label>
+            <label>
+              Invoice number
+              <input id="invoice-number" name="invoiceNumber" type="text" required />
+            </label>
+            <label>
+              Shop email
+              <input id="shop-email" name="shopEmail" type="email" placeholder="service@ariauto.com" />
+            </label>
+            <label>
+              Invoice date
+              <input id="invoice-date" name="invoiceDate" type="date" required />
+            </label>
+            <label>
+              Customer name
+              <input id="customer-name" name="customerName" type="text" placeholder="Customer full name" required />
+            </label>
+            <label>
+              Customer phone
+              <input id="customer-phone" name="customerPhone" type="tel" placeholder="(555) 123-4567" />
+            </label>
+            <label>
+              Vehicle
+              <input id="vehicle" name="vehicle" type="text" placeholder="Year Make Model" required />
+            </label>
+            <label>
+              VIN / Plate
+              <input id="vin" name="vin" type="text" placeholder="VIN or plate number" />
+            </label>
+            <label class="full-width">
+              Repair concern
+              <textarea id="repair-concern" name="repairConcern" rows="3" placeholder="Describe the customer's concern and requested repair"></textarea>
+            </label>
+          </div>
+
+          <div class="panel-heading compact">
+            <h3>Line items</h3>
+            <button id="add-line-item" class="inline-action" type="button">Add line item</button>
+          </div>
+
+          <div id="line-items" class="line-items"></div>
+
+          <div class="grid two-column totals-grid">
+            <label>
+              Tax rate %
+              <input id="tax-rate" name="taxRate" type="number" min="0" step="0.01" value="8.25" />
+            </label>
+            <label>
+              Payment status
+              <select id="payment-status" name="paymentStatus">
+                <option>Pending</option>
+                <option>Partially Paid</option>
+                <option>Paid</option>
+              </select>
+            </label>
+            <label class="full-width">
+              Technician notes
+              <textarea id="technician-notes" name="technicianNotes" rows="3" placeholder="Add warranty, service, or technician notes"></textarea>
+            </label>
+          </div>
+
+          <div class="summary-strip" aria-live="polite">
+            <div>
+              <span>Subtotal</span>
+              <strong id="subtotal-display">$0.00</strong>
+            </div>
+            <div>
+              <span>Tax</span>
+              <strong id="tax-display">$0.00</strong>
+            </div>
+            <div>
+              <span>Total due</span>
+              <strong id="total-display">$0.00</strong>
+            </div>
+          </div>
+
+          <button class="primary-action" type="submit">Generate ARI invoice</button>
+        </form>
+
+        <section id="invoice-preview" class="panel invoice-preview" aria-live="polite">
+          <div class="panel-heading">
+            <h2>Invoice preview</h2>
+            <p>Your generated repair invoice will appear here.</p>
+          </div>
+          <div id="preview-empty" class="empty-state">
+            Start by filling out the invoice form and generating a preview.
+          </div>
+          <article id="preview-content" class="preview-content" hidden>
+            <header class="invoice-header">
+              <div>
+                <p class="eyebrow">ARI</p>
+                <h3 id="preview-shop-name"></h3>
+                <p id="preview-shop-email"></p>
+              </div>
+              <div class="invoice-meta">
+                <p><strong>Invoice #:</strong> <span id="preview-invoice-number"></span></p>
+                <p><strong>Date:</strong> <span id="preview-invoice-date"></span></p>
+                <p><strong>Status:</strong> <span id="preview-payment-status"></span></p>
+              </div>
+            </header>
+
+            <section class="preview-grid">
+              <div>
+                <h4>Bill to</h4>
+                <p id="preview-customer-name"></p>
+                <p id="preview-customer-phone"></p>
+              </div>
+              <div>
+                <h4>Vehicle</h4>
+                <p id="preview-vehicle"></p>
+                <p id="preview-vin"></p>
+              </div>
+            </section>
+
+            <section>
+              <h4>Repair concern</h4>
+              <p id="preview-repair-concern"></p>
+            </section>
+
+            <section>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Qty</th>
+                    <th>Unit price</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody id="preview-line-items"></tbody>
+              </table>
+            </section>
+
+            <section class="preview-totals">
+              <p><span>Subtotal</span><strong id="preview-subtotal"></strong></p>
+              <p><span>Tax</span><strong id="preview-tax"></strong></p>
+              <p class="grand-total"><span>Total due</span><strong id="preview-total"></strong></p>
+            </section>
+
+            <section>
+              <h4>Technician notes</h4>
+              <p id="preview-technician-notes"></p>
+            </section>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <template id="line-item-template">
+      <div class="line-item">
+        <label>
+          Type
+          <select class="item-type" name="itemType">
+            <option>Labor</option>
+            <option>Part</option>
+            <option>Fee</option>
+          </select>
+        </label>
+        <label class="line-item-description">
+          Description
+          <input class="item-description" name="itemDescription" type="text" placeholder="Brake pad replacement" required />
+        </label>
+        <label>
+          Qty
+          <input class="item-quantity" name="itemQuantity" type="number" min="0" step="0.1" value="1" required />
+        </label>
+        <label>
+          Unit price
+          <input class="item-price" name="itemPrice" type="number" min="0" step="0.01" value="0" required />
+        </label>
+        <div class="line-item-total">
+          <span>Amount</span>
+          <strong class="item-total">$0.00</strong>
+        </div>
+        <button class="remove-line-item" type="button">Remove</button>
+      </div>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
