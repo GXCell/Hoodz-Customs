@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoodz Customs | AI Mechanic</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AI mechanic concierge</p>
+        <h1>Diagnose your car, estimate the cost, and book the right mechanic in one flow.</h1>
+        <p class="hero-text">
+          Hoodz Customs now offers an interactive AI mechanic experience that helps drivers explain what their car is doing,
+          understand likely repairs, preview pricing, and lock in a visit with confidence.
+        </p>
+        <div class="hero-actions">
+          <a href="#diagnostic-form" class="button primary">Start diagnosis</a>
+          <a href="#booking" class="button secondary">Book a mechanic</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="assistant-card">
+          <span class="assistant-status">Live AI session</span>
+          <h2>The AI assistant scans symptoms like a service advisor.</h2>
+          <ul>
+            <li>Understands everyday car language</li>
+            <li>Translates symptoms into likely repair paths</li>
+            <li>Shows price ranges before scheduling</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-grid">
+      <article class="feature-card">
+        <h2>1. Talk through the problem</h2>
+        <p>Pick what your vehicle is doing, how urgent it feels, and any notes. The AI mechanic responds instantly.</p>
+      </article>
+      <article class="feature-card">
+        <h2>2. Preview likely repairs</h2>
+        <p>See a likely diagnosis, estimated cost range, service window, and what to prepare before your visit.</p>
+      </article>
+      <article class="feature-card">
+        <h2>3. Schedule with confidence</h2>
+        <p>Choose the best appointment slot and send your diagnosis summary straight into a mechanic-ready booking.</p>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <form id="diagnostic-form" class="diagnostic-card">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive diagnosis</p>
+          <h2>Describe the issue</h2>
+        </div>
+
+        <label>
+          Vehicle area
+          <select id="system" name="system" required>
+            <option value="engine">Engine</option>
+            <option value="brakes">Brakes</option>
+            <option value="battery">Battery</option>
+            <option value="tires">Tires & alignment</option>
+          </select>
+        </label>
+
+        <label>
+          Main symptom
+          <select id="symptom" name="symptom" required>
+            <option value="noise">Unusual noise</option>
+            <option value="warning-light">Dashboard warning light</option>
+            <option value="hard-start">Hard start / won't start</option>
+            <option value="vibration">Shaking or vibration</option>
+          </select>
+        </label>
+
+        <label>
+          Urgency
+          <select id="urgency" name="urgency" required>
+            <option value="today">Need help today</option>
+            <option value="week">This week is fine</option>
+            <option value="planning">Just planning ahead</option>
+          </select>
+        </label>
+
+        <label>
+          Extra details
+          <textarea id="details" name="details" rows="4" placeholder="Example: grinding when braking at low speed, mostly on the front-left side"></textarea>
+        </label>
+
+        <button type="submit" class="button primary full-width">Run AI diagnosis</button>
+      </form>
+
+      <div class="results-card" id="assistant-output" aria-live="polite">
+        <div class="section-heading">
+          <p class="eyebrow">AI mechanic response</p>
+          <h2>Your repair roadmap</h2>
+        </div>
+        <div class="chat-bubble ai" id="assistant-message">
+          Tell me what the car is doing and I will estimate the likely issue, repair budget, and the best next appointment.
+        </div>
+        <div class="result-grid">
+          <article>
+            <span>Likely diagnosis</span>
+            <strong id="diagnosis">Awaiting symptom check</strong>
+          </article>
+          <article>
+            <span>Estimated range</span>
+            <strong id="price-range">$0</strong>
+          </article>
+          <article>
+            <span>Service window</span>
+            <strong id="timeline">—</strong>
+          </article>
+        </div>
+        <div class="prep-box">
+          <h3>What the mechanic should know</h3>
+          <p id="mechanic-note">Your appointment-ready summary will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="booking-card">
+      <div class="section-heading">
+        <p class="eyebrow">Mechanic scheduling</p>
+        <h2>Reserve your visit</h2>
+      </div>
+      <form id="booking-form" class="booking-form">
+        <label>
+          Your name
+          <input id="customer-name" name="customer-name" type="text" placeholder="Alex Driver" required>
+        </label>
+        <label>
+          Contact
+          <input id="contact" name="contact" type="text" placeholder="Phone or email" required>
+        </label>
+        <label>
+          Preferred slot
+          <select id="appointment-slot" name="appointment-slot" required>
+            <option value="Tomorrow · 9:00 AM">Tomorrow · 9:00 AM</option>
+            <option value="Tomorrow · 1:30 PM">Tomorrow · 1:30 PM</option>
+            <option value="Friday · 11:00 AM">Friday · 11:00 AM</option>
+          </select>
+        </label>
+        <button id="booking-submit" type="submit" class="button primary full-width" disabled aria-disabled="true" aria-describedby="booking-help">Confirm appointment</button>
+      </form>
+      <p id="booking-help" class="assistive-text">Complete the AI diagnosis first to unlock appointment booking.</p>
+      <p id="slot-status" class="assistive-text" aria-live="polite"></p>
+
+      <div class="confirmation-card" id="confirmation-card">
+        <h3>Booking status</h3>
+        <p id="confirmation-text">Run a diagnosis first, then book your preferred mechanic visit.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
