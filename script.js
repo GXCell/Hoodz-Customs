@@ -117,6 +117,13 @@ const appointmentOptions = {
   planning: ["Friday · 11:00 AM", "Saturday · 10:00 AM", "Monday · 8:30 AM"],
 };
 
+const symptomLabels = {
+  noise: "unusual noise",
+  "warning-light": "warning light issue",
+  "hard-start": "hard-start problem",
+  vibration: "vibration concern",
+};
+
 const diagnosticForm = document.getElementById("diagnostic-form");
 const bookingForm = document.getElementById("booking-form");
 const appointmentSlot = document.getElementById("appointment-slot");
@@ -124,6 +131,7 @@ const bookingSubmit = document.getElementById("booking-submit");
 const slotStatus = document.getElementById("slot-status");
 
 let mechanicNotes = "";
+let hasDiagnosis = false;
 
 diagnosticForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -140,7 +148,7 @@ diagnosticForm.addEventListener("submit", (event) => {
   document.getElementById("price-range").textContent = result.price;
   document.getElementById("timeline").textContent = result.timeline;
   document.getElementById("assistant-message").textContent =
-    `Based on your ${system} ${symptom.replace(/-/g, " ")} report, I would start with: ${result.diagnosis}.`;
+    `Based on your ${system} ${symptomLabels[symptom]} report, I would start with: ${result.diagnosis}.`;
 
   mechanicNotes = `${result.note} ${urgencyNote}${details ? ` Driver notes: ${details}` : ""}`;
   document.getElementById("mechanic-note").textContent = mechanicNotes;
@@ -156,11 +164,18 @@ diagnosticForm.addEventListener("submit", (event) => {
 
   document.getElementById("confirmation-text").textContent =
     "Diagnosis complete. Choose a slot below to send this summary to your mechanic.";
-  bookingSubmit.disabled = false;
+  bookingSubmit.setAttribute("aria-disabled", "false");
+  hasDiagnosis = true;
 });
 
 bookingForm.addEventListener("submit", (event) => {
   event.preventDefault();
+
+  if (!hasDiagnosis) {
+    document.getElementById("confirmation-text").textContent =
+      "Complete the AI diagnosis first so the mechanic receives pricing and symptom details with your booking.";
+    return;
+  }
 
   const name = document.getElementById("customer-name").value.trim();
   const contact = document.getElementById("contact").value.trim();
