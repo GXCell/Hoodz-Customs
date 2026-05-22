@@ -165,6 +165,7 @@ diagnosticForm.addEventListener("submit", (event) => {
   document.getElementById("confirmation-text").textContent =
     "Diagnosis complete. Choose a slot below to send this summary to your mechanic.";
   bookingSubmit.setAttribute("aria-disabled", "false");
+  bookingSubmit.disabled = false;
   hasDiagnosis = true;
 });
 
