@@ -111,6 +111,12 @@ const urgencyMessages = {
   planning: "You can plan ahead, but keep monitoring the symptom so the diagnosis stays accurate.",
 };
 
+const urgencyLabels = {
+  today: "same-day",
+  week: "this-week",
+  planning: "planned",
+};
+
 const appointmentOptions = {
   today: ["Today · 4:30 PM", "Tomorrow · 9:00 AM", "Tomorrow · 1:30 PM"],
   week: ["Tomorrow · 1:30 PM", "Friday · 11:00 AM", "Saturday · 10:00 AM"],
@@ -160,7 +166,7 @@ diagnosticForm.addEventListener("submit", (event) => {
     option.textContent = slot;
     appointmentSlot.appendChild(option);
   });
-  slotStatus.textContent = `Updated appointment choices for ${urgency} urgency. First available slot: ${appointmentOptions[urgency][0]}.`;
+  slotStatus.textContent = `Updated appointment choices for ${urgencyLabels[urgency]} service. First available slot: ${appointmentOptions[urgency][0]}.`;
 
   document.getElementById("confirmation-text").textContent =
     "Diagnosis complete. Choose a slot below to send this summary to your mechanic.";
@@ -187,5 +193,5 @@ bookingForm.addEventListener("submit", (event) => {
   const readySummary = mechanicNotes || "General diagnostic appointment requested.";
 
   document.getElementById("confirmation-text").textContent =
-    `${name}, your ${slot} appointment is reserved. The shop will contact you at ${contact} with a ${diagnosis.toLowerCase()} estimate of ${price}. Notes sent: ${readySummary}`;
+    `${name}, your ${slot} appointment is reserved. The shop will contact you at ${contact}. Diagnosis: ${diagnosis}. Estimated range: ${price}. Notes sent: ${readySummary}`;
 });
