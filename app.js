@@ -117,19 +117,22 @@ const renderPreview = () => {
     .filter((item) => item.description)
     .forEach((item) => {
       const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${item.type}</td>
-        <td>${item.description}</td>
-        <td>${item.quantity}</td>
-        <td>${formatCurrency(item.price)}</td>
-        <td>${formatCurrency(item.amount)}</td>
-      `;
+      [item.type, item.description, item.quantity, formatCurrency(item.price), formatCurrency(item.amount)].forEach(
+        (value) => {
+          const cell = document.createElement('td');
+          cell.textContent = String(value);
+          row.appendChild(cell);
+        }
+      );
       previewFields.lineItems.appendChild(row);
     });
 
   if (!previewFields.lineItems.children.length) {
     const row = document.createElement('tr');
-    row.innerHTML = '<td colspan="5">No repair items added.</td>';
+    const cell = document.createElement('td');
+    cell.colSpan = 5;
+    cell.textContent = 'No repair items added.';
+    row.appendChild(cell);
     previewFields.lineItems.appendChild(row);
   }
 
