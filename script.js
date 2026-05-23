@@ -135,63 +135,87 @@ const bookingForm = document.getElementById("booking-form");
 const appointmentSlot = document.getElementById("appointment-slot");
 const bookingSubmit = document.getElementById("booking-submit");
 const slotStatus = document.getElementById("slot-status");
+const bookingHelp = document.getElementById("booking-help");
+const assistantMessage = document.getElementById("assistant-message");
+const diagnosisOutput = document.getElementById("diagnosis");
+const priceRangeOutput = document.getElementById("price-range");
+const timelineOutput = document.getElementById("timeline");
+const mechanicNoteOutput = document.getElementById("mechanic-note");
+const confirmationText = document.getElementById("confirmation-text");
 
 let mechanicNotes = "";
 let hasDiagnosis = false;
 
-diagnosticForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (diagnosticForm && bookingForm && appointmentSlot && bookingSubmit && slotStatus) {
+  diagnosticForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const system = document.getElementById("system").value;
-  const symptom = document.getElementById("symptom").value;
-  const urgency = document.getElementById("urgency").value;
-  const details = document.getElementById("details").value.trim();
+    const system = document.getElementById("system").value;
+    const symptom = document.getElementById("symptom").value;
+    const urgency = document.getElementById("urgency").value;
+    const details = document.getElementById("details").value.trim();
 
-  const result = diagnosisMap[system][symptom];
-  const urgencyNote = urgencyMessages[urgency];
+    const result = diagnosisMap[system]?.[symptom];
+    const urgencyNote = urgencyMessages[urgency];
+    const slots = appointmentOptions[urgency];
 
-  document.getElementById("diagnosis").textContent = result.diagnosis;
-  document.getElementById("price-range").textContent = result.price;
-  document.getElementById("timeline").textContent = result.timeline;
-  document.getElementById("assistant-message").textContent =
-    `Based on your ${system} ${symptomLabels[symptom]} report, I would start with: ${result.diagnosis}.`;
+    if (!result || !urgencyNote || !slots?.length) {
+      assistantMessage.textContent =
+        "I couldn't generate a diagnosis from that combination. Please review the selections and try again.";
+      slotStatus.textContent = "Diagnosis could not be generated. Please review your selections.";
+      confirmationText.textContent =
+        "A diagnosis is required before an appointment can be confirmed.";
+      bookingHelp.textContent = "Complete a valid AI diagnosis first to unlock appointment booking.";
+      bookingSubmit.setAttribute("aria-disabled", "true");
+      bookingSubmit.disabled = true;
+      hasDiagnosis = false;
+      return;
+    }
 
-  mechanicNotes = `${result.note} ${urgencyNote}${details ? ` Driver notes: ${details}` : ""}`;
-  document.getElementById("mechanic-note").textContent = mechanicNotes;
+    diagnosisOutput.textContent = result.diagnosis;
+    priceRangeOutput.textContent = result.price;
+    timelineOutput.textContent = result.timeline;
+    assistantMessage.textContent =
+      `Based on your ${system} ${symptomLabels[symptom]} report, I would start with: ${result.diagnosis}.`;
 
-  appointmentSlot.innerHTML = "";
-  appointmentOptions[urgency].forEach((slot) => {
-    const option = document.createElement("option");
-    option.value = slot;
-    option.textContent = slot;
-    appointmentSlot.appendChild(option);
+    mechanicNotes = `${result.note} ${urgencyNote}${details ? ` Driver notes: ${details}` : ""}`;
+    mechanicNoteOutput.textContent = mechanicNotes;
+
+    appointmentSlot.innerHTML = "";
+    slots.forEach((slot) => {
+      const option = document.createElement("option");
+      option.value = slot;
+      option.textContent = slot;
+      appointmentSlot.appendChild(option);
+    });
+    slotStatus.textContent = `Updated appointment choices for ${urgencyLabels[urgency]} service. First available slot: ${slots[0]}.`;
+
+    confirmationText.textContent =
+      "Diagnosis complete. Choose a slot below to send this summary to your mechanic.";
+    bookingHelp.textContent = "Diagnosis complete. Booking is now unlocked.";
+    bookingSubmit.setAttribute("aria-disabled", "false");
+    bookingSubmit.disabled = false;
+    hasDiagnosis = true;
   });
-  slotStatus.textContent = `Updated appointment choices for ${urgencyLabels[urgency]} service. First available slot: ${appointmentOptions[urgency][0]}.`;
 
-  document.getElementById("confirmation-text").textContent =
-    "Diagnosis complete. Choose a slot below to send this summary to your mechanic.";
-  bookingSubmit.setAttribute("aria-disabled", "false");
-  bookingSubmit.disabled = false;
-  hasDiagnosis = true;
-});
+  bookingForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-bookingForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+    if (!hasDiagnosis) {
+      confirmationText.textContent =
+        "Complete the AI diagnosis first so the mechanic receives pricing and symptom details with your booking.";
+      return;
+    }
 
-  if (!hasDiagnosis) {
-    document.getElementById("confirmation-text").textContent =
-      "Complete the AI diagnosis first so the mechanic receives pricing and symptom details with your booking.";
-    return;
-  }
+    const name = document.getElementById("customer-name").value.trim();
+    const contact = document.getElementById("contact").value.trim();
+    const slot = appointmentSlot.value;
+    const diagnosis = diagnosisOutput.textContent;
+    const price = priceRangeOutput.textContent;
 
-  const name = document.getElementById("customer-name").value.trim();
-  const contact = document.getElementById("contact").value.trim();
-  const slot = appointmentSlot.value;
-  const diagnosis = document.getElementById("diagnosis").textContent;
-  const price = document.getElementById("price-range").textContent;
+    const readySummary = mechanicNotes || "General diagnostic appointment requested.";
 
-  const readySummary = mechanicNotes || "General diagnostic appointment requested.";
-
-  document.getElementById("confirmation-text").textContent =
-    `${name}, your ${slot} appointment is reserved. The shop will contact you at ${contact}. Diagnosis: ${diagnosis}. Estimated range: ${price}. Notes sent: ${readySummary}`;
-});
+    confirmationText.textContent =
+      `${name}, your ${slot} appointment is reserved. The shop will contact you at ${contact}. Diagnosis: ${diagnosis}. Estimated range: ${price}. Notes sent: ${readySummary}`;
+  });
+}
