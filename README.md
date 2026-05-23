@@ -20,7 +20,7 @@ Hoodz Customs is a simple static website concept for an AI mechanic experience. 
 
 Because this is a static site, no build step is required.
 
-1. Open `/home/runner/work/Hoodz-Customs/Hoodz-Customs/index.html` in a browser, or
+1. Open `index.html` from your cloned project folder in a browser, or
 2. Serve the folder with any basic static server
 
 ## Recent fixes
