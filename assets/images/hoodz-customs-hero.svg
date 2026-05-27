@@ -1,0 +1,138 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGlow" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#182A3F"/>
+      <stop offset="0.48" stop-color="#0B111A"/>
+      <stop offset="1" stop-color="#05080D"/>
+    </linearGradient>
+    <radialGradient id="floorGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 710) rotate(90) scale(240 650)">
+      <stop stop-color="#FFF2B2" stop-opacity="0.85"/>
+      <stop offset="0.55" stop-color="#5FD9FF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0A1016" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blueGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(802 465) rotate(90) scale(235 430)">
+      <stop stop-color="#30D7FF" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#30D7FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="carPaint" x1="506" y1="298" x2="1090" y2="781" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5AF2FF"/>
+      <stop offset="0.48" stop-color="#00A9E5"/>
+      <stop offset="1" stop-color="#0C5E92"/>
+    </linearGradient>
+    <linearGradient id="carShadow" x1="800" y1="334" x2="800" y2="782" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#153A5A" stop-opacity="0"/>
+      <stop offset="1" stop-color="#041B29" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="windshield" x1="800" y1="228" x2="800" y2="456" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2FE3FF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#06203B" stop-opacity="0.85"/>
+    </linearGradient>
+    <radialGradient id="lightGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(363 575) rotate(180) scale(91 47)">
+      <stop stop-color="#FFE6A7"/>
+      <stop offset="1" stop-color="#FFE6A7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lightGlowRight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1237 575) scale(91 47)">
+      <stop stop-color="#FFE6A7"/>
+      <stop offset="1" stop-color="#FFE6A7" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bgGlow)"/>
+  <rect width="1600" height="900" fill="url(#blueGlow)"/>
+  <ellipse cx="800" cy="710" rx="650" ry="240" fill="url(#floorGlow)"/>
+
+  <g opacity="0.38">
+    <rect x="80" y="150" width="210" height="320" rx="12" fill="#2A2018"/>
+    <rect x="1310" y="150" width="210" height="320" rx="12" fill="#2A2018"/>
+    <path d="M0 86H1600" stroke="#1C2834" stroke-width="8"/>
+    <path d="M80 0V900M1520 0V900" stroke="#111823" stroke-width="10"/>
+  </g>
+
+  <g opacity="0.22" stroke="#85F1FF" stroke-width="6">
+    <path d="M146 190V412"/>
+    <path d="M238 190V412"/>
+    <path d="M1354 190V412"/>
+    <path d="M1446 190V412"/>
+  </g>
+
+  <g fill="#F5E9BF" opacity="0.96">
+    <rect x="303" y="62" width="260" height="48" rx="8" transform="rotate(12 303 62)"/>
+    <rect x="1095" y="117" width="260" height="48" rx="8" transform="rotate(-12 1095 117)"/>
+  </g>
+  <g filter="url(#soft)" opacity="0.5">
+    <rect x="303" y="62" width="260" height="48" rx="8" transform="rotate(12 303 62)" fill="#FFF7D6"/>
+    <rect x="1095" y="117" width="260" height="48" rx="8" transform="rotate(-12 1095 117)" fill="#FFF7D6"/>
+  </g>
+
+  <text x="800" y="275" text-anchor="middle" fill="#F9F1C9" font-size="290" font-weight="900" letter-spacing="12" font-family="Arial, Helvetica, sans-serif">HOODZ</text>
+  <text x="1185" y="272" fill="#EDE8C7" font-size="72" font-weight="700" letter-spacing="4" font-family="Arial, Helvetica, sans-serif">HOODZ</text>
+  <text x="1185" y="342" fill="#EDE8C7" font-size="72" font-weight="700" letter-spacing="4" font-family="Arial, Helvetica, sans-serif">CUSTOMS</text>
+
+  <g opacity="0.4">
+    <circle cx="210" cy="645" r="64" fill="#0E151D" stroke="#3A4B5B" stroke-width="10"/>
+    <circle cx="1378" cy="680" r="68" fill="#0E151D" stroke="#3A4B5B" stroke-width="10"/>
+    <circle cx="1225" cy="487" r="84" fill="#111821" stroke="#B9A47C" stroke-width="8"/>
+  </g>
+
+  <g>
+    <rect x="170" y="345" width="86" height="365" rx="20" fill="url(#carPaint)" opacity="0.9"/>
+    <rect x="1344" y="345" width="86" height="365" rx="20" fill="url(#carPaint)" opacity="0.9"/>
+    <rect x="194" y="315" width="38" height="400" rx="19" fill="#CFF8FF" opacity="0.48"/>
+    <rect x="1368" y="315" width="38" height="400" rx="19" fill="#CFF8FF" opacity="0.48"/>
+  </g>
+
+  <g transform="translate(0 18)">
+    <ellipse cx="800" cy="732" rx="365" ry="54" fill="#030508" opacity="0.85"/>
+    <path d="M533 600C560 517 615 423 690 357H910C985 423 1040 517 1067 600L1090 723H510L533 600Z" fill="url(#carPaint)"/>
+    <path d="M533 600C560 517 615 423 690 357H910C985 423 1040 517 1067 600L1090 723H510L533 600Z" fill="url(#carShadow)"/>
+    <path d="M664 333C704 281 756 255 800 255C844 255 896 281 936 333L988 430H612L664 333Z" fill="url(#windshield)" stroke="#62ECFF" stroke-width="7"/>
+    <path d="M628 441C688 424 742 416 800 416C858 416 912 424 972 441L944 522H656L628 441Z" fill="#08131E"/>
+    <path d="M612 430H988L956 520H644L612 430Z" fill="#071722" opacity="0.82"/>
+    <path d="M699 280C727 260 761 251 800 251C839 251 873 260 901 280L922 320H678L699 280Z" fill="#062437" opacity="0.85"/>
+    <path d="M626 538H974L986 603H614L626 538Z" fill="#0A1118"/>
+    <path d="M580 605H1020L1046 666H554L580 605Z" fill="#0A1118"/>
+    <path d="M686 358H914" stroke="#8AF4FF" stroke-width="6" stroke-linecap="round" opacity="0.72"/>
+    <path d="M548 610C618 575 673 560 800 560C927 560 982 575 1052 610" stroke="#091720" stroke-width="18" stroke-linecap="round"/>
+    <path d="M560 723L590 653H1010L1040 723H560Z" fill="#04090D"/>
+    <path d="M639 720H961" stroke="#FFC44D" stroke-width="5" stroke-linecap="round"/>
+    <path d="M777 345H823V723H777V345Z" fill="#09131C"/>
+    <path d="M541 480C499 506 469 542 454 588L560 576L598 503L541 480Z" fill="url(#carPaint)"/>
+    <path d="M1059 480C1101 506 1131 542 1146 588L1040 576L1002 503L1059 480Z" fill="url(#carPaint)"/>
+    <path d="M555 561C510 561 468 574 445 602L535 609L613 566L555 561Z" fill="#111920"/>
+    <path d="M1045 561C1090 561 1132 574 1155 602L1065 609L987 566L1045 561Z" fill="#111920"/>
+    <path d="M578 579C558 607 550 633 550 660C584 670 627 672 674 664L690 596L578 579Z" fill="#111821"/>
+    <path d="M1022 579C1042 607 1050 633 1050 660C1016 670 973 672 926 664L910 596L1022 579Z" fill="#111821"/>
+    <path d="M597 571H1003" stroke="#92F4FF" stroke-width="7" opacity="0.6"/>
+    <path d="M667 334L654 428" stroke="#8DF7FF" stroke-width="6" opacity="0.55"/>
+    <path d="M933 334L946 428" stroke="#8DF7FF" stroke-width="6" opacity="0.55"/>
+    <path d="M695 293L670 433" stroke="#7CEBFF" stroke-width="6" opacity="0.4"/>
+    <path d="M905 293L930 433" stroke="#7CEBFF" stroke-width="6" opacity="0.4"/>
+
+    <rect x="732" y="392" width="136" height="68" rx="34" fill="#D7263D" stroke="#FFC9A0" stroke-width="6"/>
+    <path d="M777 392V460" stroke="#FFC9A0" stroke-width="6"/>
+    <path d="M823 392V460" stroke="#FFC9A0" stroke-width="6"/>
+
+    <path d="M589 557C610 532 641 514 685 500H739L698 586H590L589 557Z" fill="#101921"/>
+    <path d="M1011 557C990 532 959 514 915 500H861L902 586H1010L1011 557Z" fill="#101921"/>
+    <circle cx="693" cy="543" r="28" fill="#B6C8D5"/>
+    <circle cx="907" cy="543" r="28" fill="#B6C8D5"/>
+    <circle cx="693" cy="543" r="16" fill="#4D5F71"/>
+    <circle cx="907" cy="543" r="16" fill="#4D5F71"/>
+
+    <path d="M535 590C546 546 584 519 633 519H690L640 635H558C534 635 525 625 535 590Z" fill="#091118"/>
+    <path d="M1065 590C1054 546 1016 519 967 519H910L960 635H1042C1066 635 1075 625 1065 590Z" fill="#091118"/>
+
+    <path d="M552 569C577 541 602 530 650 530L624 599H535C537 588 543 578 552 569Z" fill="#F9F5D2"/>
+    <path d="M1048 569C1023 541 998 530 950 530L976 599H1065C1063 588 1057 578 1048 569Z" fill="#F9F5D2"/>
+    <ellipse cx="363" cy="575" rx="91" ry="47" fill="url(#lightGlow)" opacity="0.95"/>
+    <ellipse cx="1237" cy="575" rx="91" ry="47" fill="url(#lightGlowRight)" opacity="0.95"/>
+
+    <path d="M650 343L618 445H982L950 343" stroke="#03263A" stroke-width="13" stroke-linecap="round"/>
+    <path d="M615 441C678 421 739 412 800 412C861 412 922 421 985 441" stroke="#0D6C95" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <text x="804" y="395" text-anchor="middle" fill="#FFFBEA" font-size="82" font-weight="800" letter-spacing="8" font-family="Arial, Helvetica, sans-serif">CUSTOMS</text>
+</svg>
