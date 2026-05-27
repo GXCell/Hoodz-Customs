@@ -28,7 +28,9 @@ body {
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   background:
-    radial-gradient(circle at top, rgba(26, 103, 147, 0.24), transparent 32%),
+    linear-gradient(rgba(6, 11, 19, 0.76), rgba(6, 11, 19, 0.92)),
+    url('assets/images/dodge-srt-garage-scene.svg') center / cover fixed no-repeat,
+    radial-gradient(circle at top, rgba(26, 103, 147, 0.22), transparent 36%),
     linear-gradient(180deg, #0a111d 0%, #060b13 55%, #04070d 100%);
   color: var(--text);
 }
@@ -41,6 +43,11 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button,
+textarea {
+  font: inherit;
 }
 
 .site-header,
@@ -59,9 +66,47 @@ a {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
   font-size: 1.125rem;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(37, 201, 255, 0.2), rgba(9, 35, 56, 0.95));
+  border: 1px solid rgba(37, 201, 255, 0.28);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.brand-text {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.brand-text strong,
+.brand-text span {
+  display: block;
+}
+
+.brand-text strong {
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brand-text span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 
@@ -196,7 +241,9 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: var(--panel-strong);
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.08), transparent 62%),
+    var(--panel-strong);
 }
 
 .hero-media {
@@ -212,6 +259,12 @@ h1 {
   margin-bottom: 1.75rem;
 }
 
+.pricing-note {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
 .section-heading h2,
 .split-layout h2,
 .cta h2 {
@@ -220,6 +273,12 @@ h1 {
 }
 
 .card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
@@ -242,6 +301,187 @@ h1 {
 .cta p {
   margin: 0;
   color: var(--muted);
+}
+
+.pricing-card {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.pricing-card .price {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.pricing-card-wide {
+  grid-column: span 2;
+  background:
+    linear-gradient(180deg, rgba(13, 26, 43, 0.9), rgba(8, 15, 24, 0.92)),
+    linear-gradient(135deg, rgba(37, 201, 255, 0.16), transparent 60%);
+}
+
+.assistant-heading,
+.tools-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.assistant-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+  gap: 1rem;
+}
+
+.assistant-panel {
+  padding: 1.25rem;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-log {
+  display: grid;
+  gap: 0.85rem;
+  min-height: 320px;
+  max-height: 430px;
+  margin-bottom: 1rem;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+.chat-bubble {
+  max-width: min(100%, 42rem);
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+}
+
+.chat-bubble p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.chat-bubble-user {
+  justify-self: end;
+  background: linear-gradient(135deg, rgba(37, 201, 255, 0.18), rgba(9, 28, 46, 0.96));
+  border: 1px solid rgba(37, 201, 255, 0.18);
+}
+
+.chat-bubble-assistant {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-bubble-pending {
+  opacity: 0.78;
+}
+
+.chat-form textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(4, 10, 16, 0.72);
+  color: var(--text);
+}
+
+.chat-form textarea::placeholder {
+  color: rgba(173, 195, 217, 0.76);
+}
+
+.chat-form textarea:disabled,
+.prompt-chip:disabled,
+.button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.chat-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 0.9rem;
+}
+
+.prompt-panel h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.prompt-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.prompt-chip {
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.prompt-chip:hover,
+.prompt-chip:focus-visible,
+.button:hover,
+.button:focus-visible {
+  border-color: rgba(37, 201, 255, 0.34);
+  transform: translateY(-1px);
+}
+
+.assistant-note,
+.tool-label {
+  color: var(--muted);
+}
+
+.assistant-note {
+  margin: 1rem 0 0;
+  font-size: 0.94rem;
+}
+
+.tool-grid {
+  align-items: stretch;
+}
+
+.tool-card {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.tool-label {
+  margin: 0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.tool-card-alt {
+  background:
+    linear-gradient(180deg, rgba(13, 26, 43, 0.9), rgba(8, 15, 24, 0.92)),
+    linear-gradient(135deg, rgba(37, 201, 255, 0.16), transparent 60%);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .section-highlight {
@@ -275,8 +515,16 @@ h1 {
 @media (max-width: 900px) {
   .hero,
   .split-layout,
-  .card-grid {
+  .card-grid,
+  .pricing-grid,
+  .assistant-layout,
+  .assistant-heading,
+  .tools-heading {
     grid-template-columns: 1fr;
+  }
+
+  .pricing-card-wide {
+    grid-column: auto;
   }
 
   .hero {
@@ -295,6 +543,15 @@ h1 {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .site-nav,
+  .chat-actions {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
   }
 
   .hero-stats {

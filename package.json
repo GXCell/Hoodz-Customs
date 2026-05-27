@@ -1,0 +1,9 @@
+{
+  "name": "hoodz-customs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hoodz Customs landing page with AI mechanic chat backend",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

@@ -9,14 +9,24 @@
     />
     <title>Hoodz Customs</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top">Hoodz Customs</a>
+      <a class="brand" href="#top" aria-label="Hoodz Customs home">
+        <span class="brand-mark" aria-hidden="true">HC</span>
+        <span class="brand-text">
+          <strong>Hoodz Customs</strong>
+          <span>Performance Garage</span>
+        </span>
+      </a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#services">Services</a>
         <a href="#builds">Builds</a>
+        <a href="#assistant">AI Mechanic</a>
+        <a href="#tools">Tools</a>
         <a href="#contact">Contact</a>
+        <a href="owner-login.html">Owner</a>
       </nav>
     </header>
 
@@ -47,8 +57,8 @@
 
         <figure class="hero-media">
           <img
-            src="assets/images/hoodz-customs-hero.svg"
-            alt="Stylized Hoodz Customs hero artwork showing a blue performance car in a custom garage"
+            src="assets/images/dodge-srt-garage-scene.svg"
+            alt="Realistic styled custom garage scene featuring a widebody SRT-inspired muscle car under shop lighting"
           />
         </figure>
       </section>
@@ -56,29 +66,50 @@
       <section class="section" id="services" aria-labelledby="services-title">
         <div class="section-heading">
           <p class="eyebrow">Services</p>
-          <h2 id="services-title">Garage work with showroom standards</h2>
+          <h2 id="services-title">Service menu with Colorado pricing</h2>
+          <p class="pricing-note">
+            Typical 2026 Colorado market pricing for labor and parts ranges. Final quotes vary by
+            vehicle, parts grade, and rust/corrosion condition.
+          </p>
         </div>
 
-        <div class="card-grid">
-          <article class="card">
-            <h3>Performance upgrades</h3>
-            <p>
-              Intake, exhaust, suspension, and bolt-on installs tuned for sharper response and
-              reliable power.
-            </p>
+        <div class="pricing-grid">
+          <article class="card pricing-card">
+            <h3>Oil change</h3>
+            <p class="price">$65 - $140</p>
+            <p>Conventional to full synthetic. Filter and fluid disposal included.</p>
           </article>
-          <article class="card">
-            <h3>Custom styling</h3>
-            <p>
-              Splitters, wheels, accent packages, and detail-driven finishes that match the build’s
-              personality.
-            </p>
+          <article class="card pricing-card">
+            <h3>Brake service (per axle)</h3>
+            <p class="price">$220 - $520</p>
+            <p>Pads and rotor service ranges by platform, pad type, and hardware condition.</p>
           </article>
-          <article class="card">
-            <h3>Detail and delivery</h3>
+          <article class="card pricing-card">
+            <h3>Tie rod replacement</h3>
+            <p class="price">$180 - $420</p>
+            <p>Inner/outer tie rods depending on steering setup; alignment billed separately.</p>
+          </article>
+          <article class="card pricing-card">
+            <h3>CV axle replacement</h3>
+            <p class="price">$260 - $780</p>
+            <p>Front or rear axle pricing varies by drivetrain, axle brand, and labor access.</p>
+          </article>
+          <article class="card pricing-card">
+            <h3>Clutch install</h3>
+            <p class="price">$1,150 - $2,600</p>
+            <p>Labor-heavy service based on drivetrain layout and flywheel/resurfacing needs.</p>
+          </article>
+          <article class="card pricing-card">
+            <h3>Diagnostic charge</h3>
+            <p class="price">$95 - $185</p>
+            <p>Scan, live data review, and first-pass testing to define accurate repair paths.</p>
+          </article>
+          <article class="card pricing-card pricing-card-wide">
+            <h3>Mobile mechanic service available</h3>
+            <p class="price">$85 - $165 trip fee</p>
             <p>
-              Paint-safe correction, interior refresh, and final presentation so your car leaves
-              camera-ready.
+              On-site diagnostics and select repairs available by schedule in Colorado service
+              areas. Final trip fee depends on distance and required tooling.
             </p>
           </article>
         </div>
@@ -95,6 +126,104 @@
             choose the attitude, spec the parts, finish every surface, and hand over a build that
             feels complete.
           </p>
+        </div>
+      </section>
+
+      <section class="section assistant-section" id="assistant" aria-labelledby="assistant-title">
+        <div class="section-heading assistant-heading">
+          <div>
+            <p class="eyebrow">AI Mechanic</p>
+            <h2 id="assistant-title">Get a fast first-pass answer before you book the bay.</h2>
+          </div>
+          <p>
+            Ask about maintenance, upgrades, warning signs, or build planning. This assistant gives
+            quick guidance and helps route the next step.
+          </p>
+        </div>
+
+        <div class="assistant-layout">
+          <div class="assistant-panel chat-panel">
+            <div class="chat-log" id="chat-log" aria-live="polite">
+              <article class="chat-bubble chat-bubble-assistant">
+                <p>
+                  I’m the Hoodz Customs mechanic assistant. Ask about noises, maintenance timing,
+                  mods, detailing, or what to bring to your consult.
+                </p>
+              </article>
+            </div>
+
+            <form class="chat-form" id="chat-form">
+              <label class="sr-only" for="chat-input">Ask the mechanic assistant</label>
+              <textarea
+                id="chat-input"
+                name="message"
+                rows="3"
+                placeholder="Example: My Charger shakes under braking. What should I check first?"
+                required
+              ></textarea>
+              <div class="chat-actions">
+                <button class="button button-primary" type="submit">Ask the assistant</button>
+                <button class="button button-secondary" type="button" id="chat-clear">Clear chat</button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="assistant-panel prompt-panel" aria-label="Suggested questions">
+            <h3>Try asking</h3>
+            <div class="prompt-list">
+              <button class="prompt-chip" type="button">Why is my engine idling rough?</button>
+              <button class="prompt-chip" type="button">What upgrades should I start with for a daily driver?</button>
+              <button class="prompt-chip" type="button">How often should I detail ceramic-coated paint?</button>
+              <button class="prompt-chip" type="button">What should I inspect if my brakes pulse?</button>
+            </div>
+            <p class="assistant-note">
+              The on-site assistant is a guidance tool, not a diagnostic scanner. Final inspection
+              should still happen in person.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section tools-section" id="tools" aria-labelledby="tools-title">
+        <div class="section-heading tools-heading">
+          <div>
+            <p class="eyebrow">Customer Tools</p>
+            <h2 id="tools-title">Run a history check and jump into invoicing from one place.</h2>
+          </div>
+          <p>
+            These links are ready for live use now and can be replaced later with your direct
+            account or portal URLs.
+          </p>
+        </div>
+
+        <div class="card-grid tool-grid">
+          <article class="card tool-card">
+            <p class="tool-label">Vehicle history</p>
+            <h3>CARFAX lookup</h3>
+            <p>
+              Send customers to CARFAX for vehicle history access before a purchase review or build
+              intake.
+            </p>
+            <a class="button button-primary" href="https://www.carfax.com/" target="_blank" rel="noreferrer">Open CARFAX</a>
+          </article>
+          <article class="card tool-card">
+            <p class="tool-label">Invoicing</p>
+            <h3>ARI portal</h3>
+            <p>
+              Launch the ARI platform for invoicing and fleet workflow access. Swap this to your
+              exact tenant URL when you have it.
+            </p>
+            <a class="button button-primary" href="https://www.arifleet.com/" target="_blank" rel="noreferrer">Open ARI</a>
+          </article>
+          <article class="card tool-card tool-card-alt">
+            <p class="tool-label">Shop intake</p>
+            <h3>Need a custom quote?</h3>
+            <p>
+              Use the assistant for quick answers, then move into a build consult when the job needs
+              parts planning, labor, or inspection time.
+            </p>
+            <a class="button button-secondary" href="#contact">Book a consult</a>
+          </article>
         </div>
       </section>
 

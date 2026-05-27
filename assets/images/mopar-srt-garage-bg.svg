@@ -1,0 +1,74 @@
+<svg width="1920" height="1280" viewBox="0 0 1920 1280" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Custom garage background</title>
+  <desc id="desc">A realistic-style custom garage scene with a modern muscle coupe and cinematic lighting.</desc>
+  <defs>
+    <linearGradient id="bg" x1="145" y1="60" x2="1772" y2="1136" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#152636" />
+      <stop offset="0.52" stop-color="#08121D" />
+      <stop offset="1" stop-color="#03070D" />
+    </linearGradient>
+    <linearGradient id="wallGlow" x1="480" y1="230" x2="1418" y2="372" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2BE0FF" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#2BE0FF" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="floor" x1="957" y1="664" x2="961" y2="1260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A121B" />
+      <stop offset="1" stop-color="#02050A" />
+    </linearGradient>
+    <linearGradient id="carBody" x1="520" y1="790" x2="1410" y2="790" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#21B7E8" />
+      <stop offset="0.4" stop-color="#1EA8DA" />
+      <stop offset="1" stop-color="#0D6FBE" />
+    </linearGradient>
+    <linearGradient id="glass" x1="765" y1="650" x2="1080" y2="635" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6F7FF" stop-opacity="0.75" />
+      <stop offset="1" stop-color="#7FB8DE" stop-opacity="0.16" />
+    </linearGradient>
+    <filter id="blurSoft" x="0" y="0" width="1920" height="1280" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="28" />
+    </filter>
+    <filter id="shadow" x="385" y="560" width="1180" height="405" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="40" flood-color="#000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1280" fill="url(#bg)" />
+  <rect y="1000" width="1920" height="280" fill="url(#floor)" />
+  <path d="M-120 1238C278 958 646 911 1028 915C1380 919 1694 988 2050 1260H-120V1238Z" fill="#02060B" />
+
+  <g opacity="0.7">
+    <path d="M130 238H1788" stroke="#2BE0FF" stroke-opacity="0.22" stroke-width="12" stroke-linecap="round" />
+    <path d="M190 178H640" stroke="#2BE0FF" stroke-opacity="0.16" stroke-width="6" stroke-linecap="round" />
+    <path d="M1270 178H1720" stroke="#2BE0FF" stroke-opacity="0.16" stroke-width="6" stroke-linecap="round" />
+    <path d="M340 315H540" stroke="#8CF0FF" stroke-opacity="0.17" stroke-width="20" stroke-linecap="round" />
+    <path d="M1360 315H1560" stroke="#8CF0FF" stroke-opacity="0.17" stroke-width="20" stroke-linecap="round" />
+  </g>
+
+  <ellipse cx="960" cy="345" rx="520" ry="120" fill="url(#wallGlow)" />
+
+  <g filter="url(#blurSoft)">
+    <ellipse cx="970" cy="912" rx="430" ry="95" fill="#11AEE0" fill-opacity="0.28" />
+    <ellipse cx="970" cy="952" rx="350" ry="60" fill="#2BE0FF" fill-opacity="0.18" />
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M520 865L612 722L860 666H1185L1320 721L1410 853L1350 885H1255L1172 760H756L662 885H574L520 865Z" fill="url(#carBody)" />
+    <path d="M663 885L758 760H1171L1254 885H663Z" fill="#081521" fill-opacity="0.74" />
+    <path d="M742 760L836 631H1098L1172 760H742Z" fill="#163956" />
+    <path d="M766 748L852 646H1067L1095 748H766Z" fill="url(#glass)" />
+    <path d="M744 760H1172" stroke="#C8F8FF" stroke-opacity="0.42" stroke-width="4" />
+    <path d="M572 799L640 702L702 697L656 799H572Z" fill="#193E5B" />
+    <path d="M1240 799L1208 697L1272 702L1335 799H1240Z" fill="#193E5B" />
+    <path d="M554 868H697" stroke="#A2F3FF" stroke-width="8" stroke-linecap="round" />
+    <path d="M1236 868H1370" stroke="#A2F3FF" stroke-width="8" stroke-linecap="round" />
+
+    <circle cx="712" cy="908" r="98" fill="#050D15" />
+    <circle cx="712" cy="908" r="57" fill="#13293D" stroke="#79E1FB" stroke-width="10" />
+    <circle cx="1218" cy="908" r="98" fill="#050D15" />
+    <circle cx="1218" cy="908" r="57" fill="#13293D" stroke="#79E1FB" stroke-width="10" />
+  </g>
+
+  <path d="M290 1060H1620" stroke="#2BE0FF" stroke-opacity="0.2" stroke-width="7" stroke-linecap="round" />
+  <text x="238" y="1154" fill="#E7F6FF" fill-opacity="0.8" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700" letter-spacing="12">CUSTOM MUSCLE GARAGE</text>
+  <text x="240" y="1204" fill="#66D7F5" fill-opacity="0.72" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="10">MOPAR INSPIRED . SRT STYLE . STREET BUILDS</text>
+</svg>

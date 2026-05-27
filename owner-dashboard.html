@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Owner dashboard for Hoodz Customs operations." />
+    <title>Hoodz Customs Owner Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="owner.css" />
+    <script src="owner.js" defer></script>
+  </head>
+  <body data-page="owner-dashboard">
+    <main class="owner-shell">
+      <section class="owner-panel owner-panel-wide">
+        <header class="owner-header">
+          <div>
+            <p class="eyebrow">Owner Dashboard</p>
+            <h1>Shop operations</h1>
+            <p id="owner-welcome" class="owner-subtext"></p>
+          </div>
+          <button id="owner-logout" class="button button-secondary" type="button">Log out</button>
+        </header>
+
+        <section class="owner-grid" id="owner-dashboard-grid" hidden>
+          <article class="owner-card">
+            <h2>Email Access</h2>
+            <div id="owner-email-links" class="owner-links"></div>
+          </article>
+
+          <article class="owner-card">
+            <h2>ARI Invoicing</h2>
+            <p>Open your ARI portal to review and create invoices.</p>
+            <a id="owner-ari-link" class="button button-primary" target="_blank" rel="noreferrer">Open ARI Portal</a>
+          </article>
+
+          <article class="owner-card owner-card-full">
+            <h2>Backend Health</h2>
+            <pre id="owner-health" class="owner-health"></pre>
+          </article>
+        </section>
+
+        <p id="owner-dashboard-error" class="owner-error" aria-live="polite"></p>
+      </section>
+    </main>
+  </body>
+</html>

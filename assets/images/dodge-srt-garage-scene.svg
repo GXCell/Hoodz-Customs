@@ -1,0 +1,88 @@
+<svg width="1800" height="1200" viewBox="0 0 1800 1200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">SRT-style garage scene</title>
+  <desc id="desc">A realistic styled custom garage scene with a low widebody muscle coupe, overhead shop lights, reflections, and atmospheric haze.</desc>
+  <defs>
+    <linearGradient id="g_bg" x1="900" y1="0" x2="900" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#141A22"/>
+      <stop offset="0.48" stop-color="#0D1218"/>
+      <stop offset="1" stop-color="#070A0E"/>
+    </linearGradient>
+    <radialGradient id="g_haze" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 380) rotate(90) scale(420 980)">
+      <stop stop-color="#78AEDA" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#78AEDA" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g_floor" x1="900" y1="760" x2="900" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111820"/>
+      <stop offset="1" stop-color="#070A0E"/>
+    </linearGradient>
+    <linearGradient id="g_car_body" x1="410" y1="632" x2="1365" y2="725" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A3F47"/>
+      <stop offset="0.36" stop-color="#5E6670"/>
+      <stop offset="0.78" stop-color="#2B3139"/>
+      <stop offset="1" stop-color="#1D232B"/>
+    </linearGradient>
+    <linearGradient id="g_glass" x1="693" y1="520" x2="1079" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7EBFF" stop-opacity="0.56"/>
+      <stop offset="1" stop-color="#6C859D" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="g_accent" x1="486" y1="770" x2="1278" y2="770" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF3B2F"/>
+      <stop offset="1" stop-color="#B61515"/>
+    </linearGradient>
+    <radialGradient id="g_light_left" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(520 212) rotate(90) scale(80 230)">
+      <stop stop-color="#E7F4FF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#E7F4FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g_light_right" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1275 212) rotate(90) scale(80 230)">
+      <stop stop-color="#E7F4FF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#E7F4FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="f_soft" x="0" y="0" width="1800" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+  </defs>
+
+  <rect width="1800" height="1200" fill="url(#g_bg)"/>
+  <rect width="1800" height="1200" fill="url(#g_haze)"/>
+
+  <rect x="0" y="760" width="1800" height="440" fill="url(#g_floor)"/>
+  <path d="M0 760H1800" stroke="#2A3C4D" stroke-opacity="0.42" stroke-width="3"/>
+  <path d="M0 878H1800" stroke="#223241" stroke-opacity="0.3" stroke-width="2"/>
+  <path d="M0 994H1800" stroke="#1B2833" stroke-opacity="0.24" stroke-width="2"/>
+
+  <rect x="298" y="153" width="450" height="26" rx="13" fill="#E6F3FF"/>
+  <rect x="1034" y="153" width="450" height="26" rx="13" fill="#E6F3FF"/>
+  <ellipse cx="520" cy="212" rx="230" ry="80" fill="url(#g_light_left)"/>
+  <ellipse cx="1275" cy="212" rx="230" ry="80" fill="url(#g_light_right)"/>
+
+  <g opacity="0.6">
+    <path d="M176 302H430" stroke="#9FC1DD" stroke-opacity="0.2" stroke-width="7" stroke-linecap="round"/>
+    <path d="M1369 302H1624" stroke="#9FC1DD" stroke-opacity="0.2" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#f_soft)" opacity="0.4">
+    <ellipse cx="903" cy="862" rx="498" ry="97" fill="#000"/>
+  </g>
+
+  <path d="M408 748L500 632L715 574H1110L1270 626L1365 730L1338 764H1268L1192 662H713L603 764H474L408 748Z" fill="url(#g_car_body)"/>
+  <path d="M486 768L607 655H1193L1278 768H486Z" fill="#111820"/>
+  <path d="M602 655L716 525H1061L1191 655H602Z" fill="#2A313A"/>
+  <path d="M641 644L741 542H999L1078 644H641Z" fill="url(#g_glass)"/>
+  <path d="M485 769H1278" stroke="url(#g_accent)" stroke-width="7" stroke-linecap="round"/>
+
+  <path d="M455 739L514 646L585 632L532 739H455Z" fill="#252D36"/>
+  <path d="M1222 739L1160 633L1232 647L1295 739H1222Z" fill="#252D36"/>
+
+  <path d="M445 756H569" stroke="#FFE5D3" stroke-opacity="0.88" stroke-width="7" stroke-linecap="round"/>
+  <path d="M1220 756H1338" stroke="#FFD0C4" stroke-opacity="0.88" stroke-width="7" stroke-linecap="round"/>
+
+  <circle cx="615" cy="786" r="91" fill="#0C1118"/>
+  <circle cx="615" cy="786" r="57" fill="#2C333C" stroke="#8C98A6" stroke-width="8"/>
+  <circle cx="1148" cy="786" r="91" fill="#0C1118"/>
+  <circle cx="1148" cy="786" r="57" fill="#2C333C" stroke="#8C98A6" stroke-width="8"/>
+
+  <path d="M514 889C731 915 1069 915 1285 889" stroke="#7EA1BE" stroke-opacity="0.25" stroke-width="9" stroke-linecap="round"/>
+
+  <text x="180" y="1060" fill="#DCEAF7" fill-opacity="0.84" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="10">HOODZ CUSTOMS GARAGE</text>
+  <text x="182" y="1102" fill="#89AFCF" fill-opacity="0.7" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="9">MUSCLE . SRT STYLE . CUSTOM RIDES</text>
+</svg>
