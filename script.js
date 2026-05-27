@@ -166,10 +166,10 @@ diagnosticForm.addEventListener("submit", (event) => {
     option.textContent = slot;
     appointmentSlot.appendChild(option);
   });
-  slotStatus.textContent = `Updated appointment choices for ${urgencyLabels[urgency]} service. First available slot: ${appointmentOptions[urgency][0]}.`;
+  slotStatus.textContent = `✅ Updated appointment choices for ${urgencyLabels[urgency]} service. First available: ${appointmentOptions[urgency][0]}.`;
 
   document.getElementById("confirmation-text").textContent =
-    "Diagnosis complete. Choose a slot below to send this summary to your mechanic.";
+    "✅ Diagnosis complete! Choose a slot below to send this summary to your mechanic.";
   bookingSubmit.setAttribute("aria-disabled", "false");
   bookingSubmit.disabled = false;
   hasDiagnosis = true;
@@ -180,7 +180,7 @@ bookingForm.addEventListener("submit", (event) => {
 
   if (!hasDiagnosis) {
     document.getElementById("confirmation-text").textContent =
-      "Complete the AI diagnosis first so the mechanic receives pricing and symptom details with your booking.";
+      "⚠️ Complete the AI diagnosis first so the mechanic receives pricing and symptom details with your booking.";
     return;
   }
 
@@ -193,5 +193,8 @@ bookingForm.addEventListener("submit", (event) => {
   const readySummary = mechanicNotes || "General diagnostic appointment requested.";
 
   document.getElementById("confirmation-text").textContent =
-    `${name}, your ${slot} appointment is reserved. The shop will contact you at ${contact}. Diagnosis: ${diagnosis}. Estimated range: ${price}. Notes sent: ${readySummary}`;
+    `✅ ${name}, your ${slot} appointment is reserved! The shop will contact you at ${contact}. Diagnosis: ${diagnosis}. Estimated: ${price}. Mechanic notes sent with your booking.`;
+
+  // Scroll to confirmation
+  document.getElementById("confirmation-card").scrollIntoView({ behavior: "smooth" });
 });

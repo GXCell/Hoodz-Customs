@@ -3,158 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoodz Customs | AI Mechanic</title>
+  <title>Hoodz Customs | Premium Automotive Services</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%234fd1c5' width='100' height='100'/%3E%3Ctext x='50' y='65' font-size='60' font-weight='bold' fill='%23021018' text-anchor='middle' font-family='Arial'%3EHC%3C/text%3E%3C/svg%3E">
 </head>
 <body>
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">🔧 Hoodz Customs</div>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#diagnostic-form">Diagnosis</a>
+        <a href="#booking">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="page-shell">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">AI mechanic concierge</p>
-        <h1>Diagnose your car, estimate the cost, and book the right mechanic in one flow.</h1>
-        <p class="hero-text">
-          Hoodz Customs now offers an interactive AI mechanic experience that helps drivers explain what their car is doing,
-          understand likely repairs, preview pricing, and lock in a visit with confidence.
-        </p>
-        <div class="hero-actions">
-          <a href="#diagnostic-form" class="button primary">Start diagnosis</a>
-          <a href="#booking" class="button secondary">Book a mechanic</a>
-        </div>
+    <!-- Hero Section with Garage Background -->
+    <section class="hero-section">
+      <div class="garage-background">
+        <svg class="garage-graphic" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice">
+          <!-- Garage walls -->
+          <rect width="1000" height="600" fill="#0a0a0a"/>
+          
+          <!-- Concrete floor -->
+          <rect y="400" width="1000" height="200" fill="#1a1a1a"/>
+          <line x1="0" y1="420" x2="1000" y2="420" stroke="#2a2a2a" stroke-width="2"/>
+          <line x1="0" y1="440" x2="1000" y2="440" stroke="#2a2a2a" stroke-width="1"/>
+          
+          <!-- Garage door metal lines -->
+          <rect x="50" y="30" width="900" height="350" fill="none" stroke="#333" stroke-width="2" rx="10"/>
+          <line x1="150" y1="30" x2="150" y2="380" stroke="#444" stroke-width="1" opacity="0.5"/>
+          <line x1="350" y1="30" x2="350" y2="380" stroke="#444" stroke-width="1" opacity="0.5"/>
+          <line x1="550" y1="30" x2="550" y2="380" stroke="#444" stroke-width="1" opacity="0.5"/>
+          <line x1="750" y1="30" x2="750" y2="380" stroke="#444" stroke-width="1" opacity="0.5"/>
+          <line x1="950" y1="30" x2="950" y2="380" stroke="#444" stroke-width="1" opacity="0.5"/>
+          
+          <!-- Dodge SRT Car (simplified) -->
+          <g id="dodge-srt">
+            <!-- Shadow -->
+            <ellipse cx="600" cy="480" rx="180" ry="40" fill="#000000" opacity="0.3"/>
+            
+            <!-- Car body -->
+            <path d="M 450 380 L 480 320 L 550 300 L 650 300 L 720 320 L 750 380 Z" fill="#ff0000" stroke="#cc0000" stroke-width="3"/>
+            
+            <!-- Windshield -->
+            <path d="M 500 330 L 530 310 L 650 310 L 680 330" fill="#87ceeb" opacity="0.6" stroke="#4a90e2" stroke-width="2"/>
+            
+            <!-- Door line -->
+            <line x1="575" y1="330" x2="575" y2="380" stroke="#cc0000" stroke-width="2" opacity="0.5"/>
+            
+            <!-- Front wheels -->
+            <circle cx="510" cy="385" r="35" fill="#1a1a1a" stroke="#666" stroke-width="2"/>
+            <circle cx="510" cy="385" r="20" fill="#333" stroke="#999" stroke-width="1"/>
+            
+            <!-- Rear wheels -->
+            <circle cx="690" cy="385" r="35" fill="#1a1a1a" stroke="#666" stroke-width="2"/>
+            <circle cx="690" cy="385" r="20" fill="#333" stroke="#999" stroke-width="1"/>
+            
+            <!-- Headlights -->
+            <circle cx="460" cy="370" r="8" fill="#ffff00" opacity="0.8"/>
+            <circle cx="480" cy="370" r="8" fill="#ffff00" opacity="0.8"/>
+            
+            <!-- Tail lights -->
+            <circle cx="720" cy="370" r="8" fill="#ff4444" opacity="0.8"/>
+            <circle cx="740" cy="370" r="8" fill="#ff4444" opacity="0.8"/>
+          </g>
+          
+          <!-- Garage lights -->
+          <circle cx="200" cy="80" r="25" fill="#ffeb3b" opacity="0.7"/>
+          <circle cx="500" cy="70" r="25" fill="#ffeb3b" opacity="0.7"/>
+          <circle cx="800" cy="80" r="25" fill="#ffeb3b" opacity="0.7"/>
+          
+          <!-- Tool rack -->
+          <rect x="50" y="150" width="80" height="200" fill="#222" stroke="#444" stroke-width="2" rx="5"/>
+          <line x1="55" y1="170" x2="130" y2="170" stroke="#555" stroke-width="2" opacity="0.7"/>
+          <line x1="55" y1="200" x2="130" y2="200" stroke="#555" stroke-width="2" opacity="0.7"/>
+          <line x1="55" y1="230" x2="130" y2="230" stroke="#555" stroke-width="2" opacity="0.7"/>
+          <line x1="55" y1="260" x2="130" y2="260" stroke="#555" stroke-width="2" opacity="0.7"/>
+          <line x1="55" y1="290" x2="130" y2="290" stroke="#555" stroke-width="2" opacity="0.7"/>
+          <line x1="55" y1="320" x2="130" y2="320" stroke="#555" stroke-width="2" opacity="0.7"/>
+        </svg>
       </div>
-      <div class="hero-panel">
-        <div class="assistant-card">
-          <span class="assistant-status">Live AI session</span>
-          <h2>The AI assistant scans symptoms like a service advisor.</h2>
-          <ul>
-            <li>Understands everyday car language</li>
-            <li>Translates symptoms into likely repair paths</li>
-            <li>Shows price ranges before scheduling</li>
-          </ul>
+      
+      <div class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">🏎️ Premium Automotive Services</p>
+          <h1>Hoodz Customs</h1>
+          <p class="hero-subtitle">Expert Dodge & Performance Specialists</p>
+          <p class="hero-text">
+            From diagnostic scans to complete customizations, Hoodz Customs delivers precision automotive services. 
+            Our AI-powered mechanic concierge helps you understand your vehicle's needs and book with confidence.
+          </p>
+          <div class="hero-actions">
+            <a href="#diagnostic-form" class="button primary">Start AI Diagnosis</a>
+            <a href="#booking" class="button secondary">Book a Service</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="experience-grid">
+    <!-- Services Section -->
+    <section id="services" class="experience-grid">
       <article class="feature-card">
-        <h2>1. Talk through the problem</h2>
-        <p>Pick what your vehicle is doing, how urgent it feels, and any notes. The AI mechanic responds instantly.</p>
+        <div class="feature-icon">⚙️</div>
+        <h2>Diagnostics</h2>
+        <p>Talk through the problem with our AI assistant. Get instant analysis of symptoms and repair estimates.</p>
       </article>
       <article class="feature-card">
-        <h2>2. Preview likely repairs</h2>
-        <p>See a likely diagnosis, estimated cost range, service window, and what to prepare before your visit.</p>
+        <div class="feature-icon">💰</div>
+        <h2>Transparent Pricing</h2>
+        <p>See estimated cost ranges and service windows before committing. No surprises, just honest quotes.</p>
       </article>
       <article class="feature-card">
-        <h2>3. Schedule with confidence</h2>
-        <p>Choose the best appointment slot and send your diagnosis summary straight into a mechanic-ready booking.</p>
+        <div class="feature-icon">📅</div>
+        <h2>Easy Scheduling</h2>
+        <p>Choose your preferred appointment slot and send your diagnosis straight to our expert mechanics.</p>
       </article>
     </section>
 
+    <!-- Diagnostic Form Section -->
     <section class="workspace">
       <form id="diagnostic-form" class="diagnostic-card">
         <div class="section-heading">
-          <p class="eyebrow">Interactive diagnosis</p>
-          <h2>Describe the issue</h2>
+          <p class="eyebrow">🤖 AI Mechanic Assistant</p>
+          <h2>Describe Your Vehicle's Issue</h2>
         </div>
 
         <label>
-          Vehicle area
+          Vehicle System
           <select id="system" name="system" required>
-            <option value="engine">Engine</option>
-            <option value="brakes">Brakes</option>
-            <option value="battery">Battery</option>
-            <option value="tires">Tires & alignment</option>
+            <option value="engine">🔧 Engine</option>
+            <option value="brakes">🛑 Brakes</option>
+            <option value="battery">🔋 Battery & Electrical</option>
+            <option value="tires">🛞 Tires & Suspension</option>
           </select>
         </label>
 
         <label>
-          Main symptom
+          Main Symptom
           <select id="symptom" name="symptom" required>
-            <option value="noise">Unusual noise</option>
-            <option value="warning-light">Dashboard warning light</option>
-            <option value="hard-start">Hard start / won't start</option>
-            <option value="vibration">Shaking or vibration</option>
+            <option value="noise">🔊 Unusual Noise</option>
+            <option value="warning-light">⚠️ Warning Light</option>
+            <option value="hard-start">❌ Hard Start / Won't Start</option>
+            <option value="vibration">📳 Shaking or Vibration</option>
           </select>
         </label>
 
         <label>
-          Urgency
+          Urgency Level
           <select id="urgency" name="urgency" required>
-            <option value="today">Need help today</option>
-            <option value="week">This week is fine</option>
-            <option value="planning">Just planning ahead</option>
+            <option value="today">🚨 Need Help Today</option>
+            <option value="week">📆 This Week is Fine</option>
+            <option value="planning">🗓️ Just Planning Ahead</option>
           </select>
         </label>
 
         <label>
-          Extra details
+          Additional Details
           <textarea id="details" name="details" rows="4" placeholder="Example: grinding when braking at low speed, mostly on the front-left side"></textarea>
         </label>
 
-        <button type="submit" class="button primary full-width">Run AI diagnosis</button>
+        <button type="submit" class="button primary full-width">▶ Run AI Diagnosis</button>
       </form>
 
       <div class="results-card" id="assistant-output" aria-live="polite">
         <div class="section-heading">
-          <p class="eyebrow">AI mechanic response</p>
-          <h2>Your repair roadmap</h2>
+          <p class="eyebrow">✅ AI Response</p>
+          <h2>Your Repair Roadmap</h2>
         </div>
         <div class="chat-bubble ai" id="assistant-message">
-          Tell me what the car is doing and I will estimate the likely issue, repair budget, and the best next appointment.
+          Tell me what your vehicle is doing and I'll estimate the likely issue, repair budget, and best appointment times.
         </div>
         <div class="result-grid">
           <article>
-            <span>Likely diagnosis</span>
-            <strong id="diagnosis">Awaiting symptom check</strong>
+            <span>Likely Diagnosis</span>
+            <strong id="diagnosis">Awaiting Analysis</strong>
           </article>
           <article>
-            <span>Estimated range</span>
+            <span>Estimated Cost</span>
             <strong id="price-range">$0</strong>
           </article>
           <article>
-            <span>Service window</span>
+            <span>Service Window</span>
             <strong id="timeline">—</strong>
           </article>
         </div>
         <div class="prep-box">
-          <h3>What the mechanic should know</h3>
+          <h3>📝 What to Bring</h3>
           <p id="mechanic-note">Your appointment-ready summary will appear here.</p>
         </div>
       </div>
     </section>
 
+    <!-- Booking Section -->
     <section id="booking" class="booking-card">
       <div class="section-heading">
-        <p class="eyebrow">Mechanic scheduling</p>
-        <h2>Reserve your visit</h2>
+        <p class="eyebrow">📞 Schedule Your Service</p>
+        <h2>Reserve Your Visit</h2>
       </div>
       <form id="booking-form" class="booking-form">
         <label>
-          Your name
+          Your Name
           <input id="customer-name" name="customer-name" type="text" placeholder="Alex Driver" required>
         </label>
         <label>
-          Contact
+          Contact Info
           <input id="contact" name="contact" type="text" placeholder="Phone or email" required>
         </label>
         <label>
-          Preferred slot
+          Preferred Slot
           <select id="appointment-slot" name="appointment-slot" required>
             <option value="Tomorrow · 9:00 AM">Tomorrow · 9:00 AM</option>
             <option value="Tomorrow · 1:30 PM">Tomorrow · 1:30 PM</option>
             <option value="Friday · 11:00 AM">Friday · 11:00 AM</option>
           </select>
         </label>
-        <button id="booking-submit" type="submit" class="button primary full-width" disabled aria-disabled="true" aria-describedby="booking-help">Confirm appointment</button>
+        <button id="booking-submit" type="submit" class="button primary" disabled aria-disabled="true" aria-describedby="booking-help">Confirm</button>
       </form>
-      <p id="booking-help" class="assistive-text">Complete the AI diagnosis first to unlock appointment booking.</p>
+      <p id="booking-help" class="assistive-text">Complete the AI diagnosis above to unlock booking.</p>
       <p id="slot-status" class="assistive-text" aria-live="polite"></p>
 
       <div class="confirmation-card" id="confirmation-card">
-        <h3>Booking status</h3>
-        <p id="confirmation-text">Run a diagnosis first, then book your preferred mechanic visit.</p>
+        <h3>📋 Booking Status</h3>
+        <p id="confirmation-text">Run a diagnosis first, then book your preferred service appointment.</p>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Hoodz Customs. All rights reserved. | Premium Automotive Services</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
